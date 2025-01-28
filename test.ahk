@@ -16,7 +16,7 @@ SetWorkingDir(A_ScriptDir)
 ; #Include *i <CMD> ; CMD - cmd.exe - broken?
 try WinClose("C:\Windows\system32\cmd.exe")
 getConsole(wd?, opts?) {
-  Run("*runas " A_ComSpec, wd?, opts?)
+  Run(A_ComSpec, wd?, opts?)
   list := WinGetList("C:\Windows\system32\cmd.exe").join(",")
   pid := WinExist("A")
   print(pid)
