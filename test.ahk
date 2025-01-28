@@ -14,11 +14,11 @@ SetWorkingDir(A_ScriptDir)
 #Include *i <textfind> ; FindText, setSpeed, doClick
 
 ; #Include *i <CMD> ; CMD - cmd.exe - broken?
-; a := shell.Exec('cmd /c "git add . | title"')
 Run("cmd", , , &pid)
 WinWait(pid)
 Sleep(1000)
+sshpass := EnvGet("SSHPASS")
 try WinActivate(pid)
-send("cd `"" A_ScriptDir "`"{enter}git add . {enter}git commit -m a{enter}009129354{enter}git push{enter}009129354{enter}")
+send("cd `"" A_ScriptDir "`"{enter}git add . {enter}git commit -m a{enter}" sshpass "{enter}git push{enter}" sshpass "{enter}")
 Sleep(10000)
 WinClose("A")
