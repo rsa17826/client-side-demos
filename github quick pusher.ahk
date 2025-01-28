@@ -1,6 +1,7 @@
 #Requires AutoHotkey v2.0
-#SingleInstance Force
-
+#SingleInstance OFF
+#Include <admin>
+#NoTrayIcon
 #Include *i <AutoThemed>
 
 try TraySetIcon("icon.ico")
@@ -12,8 +13,7 @@ SetWorkingDir(A_ScriptDir)
 #Include *i <betterui> ; betterui
 
 #Include *i <textfind> ; FindText, setSpeed, doClick
-#Include <admin>
-; #Include *i <CMD> ; CMD - cmd.exe - broken?
+
 try WinClose("C:\Windows\system32\cmd.exe")
 
 win := getConsole(, "hide")
