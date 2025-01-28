@@ -26,10 +26,10 @@ getConsole(wd?, opts?) {
   win := WinGetList("C:\Windows\system32\cmd.exe")[WinGetList("C:\Windows\system32\cmd.exe").find(e => !list.includes(e))]
   return win
 }
-win := getConsole()
+win := getConsole(, "min")
 print(win)
 sshpass := EnvGet("SSHPASS")
 ControlSend("cd `"" A_ScriptDir "`"{enter}git add . {enter}git commit -m a{enter}" sshpass "{enter}git push{enter}" sshpass "{enter}", , win)
 ControlSend("cd `"" A_ScriptDir "`"{enter}git add . {enter}git commit -m a{enter}" sshpass "{enter}git push{enter}" sshpass "{enter}", , "ahk_id " win)
-; Sleep(10000)
-; WinClose(win)
+Sleep(3000)
+WinClose(win)
