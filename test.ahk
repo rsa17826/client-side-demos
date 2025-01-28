@@ -15,20 +15,7 @@ SetWorkingDir(A_ScriptDir)
 #Include <admin>
 ; #Include *i <CMD> ; CMD - cmd.exe - broken?
 try WinClose("C:\Windows\system32\cmd.exe")
-getConsole(wd?, opts?) {
-  prevDetectHiddenWindows := A_DetectHiddenWindows
-  DetectHiddenWindows(1)
-  list := WinGetList("C:\Windows\system32\cmd.exe").join(",")
-  Run(A_ComSpec, wd?, opts?)
-  pid := WinExist("A")
-  print(pid)
-  while list = WinGetList("C:\Windows\system32\cmd.exe").join(",") {
-  }
-  print(list, WinGetList("C:\Windows\system32\cmd.exe"))
-  win := WinGetList("C:\Windows\system32\cmd.exe")[WinGetList("C:\Windows\system32\cmd.exe").find(e => !list.includes(e))]
-  DetectHiddenWindows(prevDetectHiddenWindows)
-  return win
-}
+
 win := getConsole(, "hide")
 print(win)
 sshpass := EnvGet("SSHPASS")
