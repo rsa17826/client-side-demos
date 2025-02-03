@@ -1,3 +1,131 @@
-<script>
-  alert(1)
-</script>
+<script src="./js globals/live.js"></script>
+<style>
+  /*
+  @name fix css comments in css
+  @regex (/\*.*(?<!\*ƒ/))$\n(?:( *) ?)
+  @replace $1 *ƒ/
+  $2/*
+  @untilfail
+  @endregex
+
+  */
+  input:not(input[type="checkbox"]) {
+    outline: 0;
+    box-shadow: 0px 0px 5px var(--text-shadow-color);
+  }
+  :root {
+    font-size: small;
+    --root-color: #0400ff;
+    --bg-color: color-mix(in srgb, var(--root-color) 10%, black);
+    --border-color: color-mix(
+      in srgb,
+      var(--root-color) 30%,
+      black 60%
+    );
+    --modified-key-bg-color: color-mix(
+      in srgb,
+      var(--root-color) 30%,
+      black
+    );
+    --text-shadow-color: color-mix(
+      in srgb,
+      var(--root-color) 80%,
+      black 20%
+    );
+
+    --keyboard-border-color: color-mix(
+      in srgb,
+      var(--root-color) 30%,
+      black 90%
+    );
+    --keyboard-bg-color: color-mix(
+      in srgb,
+      var(--root-color) 70%,
+      black 90%
+    );
+  }
+  input,
+  button,
+  label {
+    color: var(--root-color);
+    background-color: var(--bg-color);
+    text-shadow: 0px 0px 5px var(--text-shadow-color);
+  }
+  .modified {
+    background-color: var(--modified-key-bg-color);
+  }
+
+  input[type="checkbox"],
+  button {
+    accent-color: var(--root-color);
+    box-shadow: 0px 0px 5px var(--text-shadow-color);
+    border: 1px solid var(--border-color);
+    margin-right: 3px;
+  }
+
+  html {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    height: 100vh !important;
+    padding: 0px;
+    margin: 0;
+    color-scheme: light dark;
+  }
+  .hidden {
+    display: none !important;
+  }
+
+  #main {
+    padding: 10px;
+  }
+
+  /* 
+@regex \.css-[^-]+([^^ ,{.]+)(?=[ ,{.])
+@replace [class$="$1"]
+@endregex
+*/
+  :root {
+    --main-dark: #1a1b26;
+    --main-darker: #000;
+    --main-darkish: #16161e;
+    --main-light: #c0caf5;
+    --trans: #0000;
+    --secondary-light: #6da2e9;
+    --secondary-dark: #4a92f7;
+    --change-purple: #7300ff;
+    --change-white: #fff;
+
+    --custom-thumb-color: var(--main-light);
+    --custom-track-color: var(--main-darkish);
+    --webkit-scrollbar-width-height: 10px;
+    --webkit-scrollbar-border-radius: 50px;
+    --custom-track-color-hover: color-mix(
+      in srgb,
+      var(--main-light) 10%,
+      #000 100%
+    );
+  }
+  div,
+  li,
+  ul,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  button,
+  h7 {
+    color: var(--main-light) !important;
+  }
+</style>
+<html>
+  <h1>Begin to code with JavaScript</h1>
+  <h2>Hello</h2>
+  <p>Welcome to Begin to code with JavaScript.</p>
+  <p>This page has hidden secrets!</p>
+  <p>Press function key F12 to investigate.</p>
+  <a href="./secret.html"></a>
+</html>
